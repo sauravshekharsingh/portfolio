@@ -35,8 +35,11 @@ ul {
 }
 
 .container {
+  position: relative;
   max-width: 75rem;
   margin: 0 auto;
+  padding: 0 4rem;
+  z-index: 5;
 }
 
 .grid-2 {
@@ -59,10 +62,15 @@ ul {
   margin-left: 1rem;
 }
 
+img {
+  width: 100%;
+}
+
 /* Header */
 
 header {
   width: 100%;
+  position: relative;
   overflow: hidden;
 }
 
@@ -70,7 +78,6 @@ nav {
   width: 100%;
   position: relative;
   z-index: 50;
-  background-color: var(--light-lesser);
 }
 
 nav .container {
@@ -148,6 +155,91 @@ nav .container {
   background-color: #6b44e0;
 }
 
-.header-content .image img {
+.overlay {
+  position: absolute;
+  height: 100%;
   width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.overlay .shape {
+  width: initial;
+  opacity: 0.2;
+  position: absolute;
+}
+
+.overlay.overlay-lg .shape {
+  height: 55px;
+}
+
+.overlay.overlay-lg .shape.wave {
+  height: initial;
+  width: 88px;
+}
+
+header .square {
+  right: 60%;
+  top: 80%;
+}
+
+header .triangle {
+  top: 10%;
+  left: 50%;
+}
+
+header .xshape {
+  right: 10%;
+  top: 40%;
+}
+
+header .half-circle1 {
+  top: 20%;
+  right: 5%;
+}
+
+header .half-circle2 {
+  top: 50%;
+  left: 10%;
+}
+
+header .wave1 {
+  top: 30%;
+  left: 35%;
+}
+
+header .wave2 {
+  top: 70%;
+  left: 5%;
+}
+
+header .circle {
+  top: 80%;
+  right: 5%;
+}
+
+header .letters {
+  position: absolute;
+  width: 10%;
+  top: -5px;
+  left: 15px;
+  opacity: 0.2;
+}
+
+header .points {
+  opacity: 0.4;
+  position: absolute;
+}
+
+header .points1 {
+  width: 300px;
+  bottom: -10%;
+  left: -10%;
+}
+
+header .points2 {
+  width: 400px;
+  bottom: -1%;
+  right: 0;
 }
