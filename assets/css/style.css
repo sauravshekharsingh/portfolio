@@ -5,7 +5,7 @@
   --dark-less: #7a7a7a;
   --main-color: #784cfb;
   --light-more: #fff;
-  --light-less: #f9fafb;
+  --light-less: #ebebf0;
   --light-lesser: #f6f7fb;
 }
 
@@ -64,6 +64,70 @@ ul {
 
 img {
   width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  overflow: hidden;
+  top: 0;
+  left: 0;
+}
+
+.overlay .shape {
+  width: initial;
+  opacity: 0.2;
+  position: absolute;
+}
+
+.overlay.overlay-lg .shape {
+  height: 55px;
+}
+
+.overlay.overlay-lg .shape.wave {
+  height: initial;
+  width: 88px;
+}
+
+.section {
+  margin: 4rem 0;
+}
+
+.section-header {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.section-header .text {
+  width: 50%;
+  margin: 0 auto;
+}
+
+.title {
+  display: inline-block;
+  padding-bottom: 1rem;
+  font-size: 2rem;
+}
+
+.title::before {
+  content: attr(data-title);
+  display: block;
+  margin-bottom: 0.4rem;
+  color: var(--main-color);
+  font-size: 1rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  letter-spacing: 3px;
+}
+
+.title::after {
+  content: "";
+  display: block;
+  height: 4px;
+  width: 60px;
+  margin: 0 auto;
+  background-color: var(--main-color);
 }
 
 /* Header */
@@ -132,7 +196,7 @@ nav .container {
 }
 
 .header-title {
-  font-size: 3.8rem;
+  font-size: 2.8rem;
   color: var(--dark-more);
 }
 
@@ -142,7 +206,7 @@ nav .container {
 
 .btn {
   display: inline-block;
-  padding: 1rem 2rem;
+  padding: 0.6rem 2rem;
   background-color: var(--main-color);
   color: var(--light-less);
   border-radius: 2rem;
@@ -153,30 +217,6 @@ nav .container {
 
 .btn:hover {
   background-color: #6b44e0;
-}
-
-.overlay {
-  position: absolute;
-  height: 100%;
-  width: 100%;
-  overflow: hidden;
-  top: 0;
-  left: 0;
-}
-
-.overlay .shape {
-  width: initial;
-  opacity: 0.2;
-  position: absolute;
-}
-
-.overlay.overlay-lg .shape {
-  height: 55px;
-}
-
-.overlay.overlay-lg .shape.wave {
-  height: initial;
-  width: 88px;
 }
 
 header .square {
@@ -242,4 +282,272 @@ header .points2 {
   width: 400px;
   bottom: -1%;
   right: 0;
+}
+
+/* Services */
+
+.cards .card .card-content .fas {
+  color: var(--main-color);
+  font-size: 4rem;
+  margin: 4rem 0 2rem 0;
+}
+
+.cards {
+  display: flex;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  width: 100%;
+}
+
+.cards .card {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+  background-color: lightblue;
+  max-width: 300px;
+  min-height: 400px;
+  padding: 2rem;
+  background-color: var(--light-less);
+  overflow: hidden;
+  margin: 1rem;
+  transition: 0.3s;
+}
+
+.cards .card .card-content .text {
+  margin: 1rem 0 2rem 0;
+}
+
+.cards .card .btn.small {
+  padding: 0.5rem 1.4rem;
+}
+
+.cards .card::before {
+  content: attr(data-card);
+  position: absolute;
+  top: -10px;
+  right: -10px;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--main-color);
+  opacity: 0.1;
+}
+
+.cards .card::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 0;
+  left: 0;
+  bottom: 0;
+  background-color: var(--main-color);
+  transition: 0.3s;
+}
+
+.cards .card-wrap:hover .card {
+  transform: translateY(-6px);
+}
+
+.cards .card-wrap:hover .card::after {
+  height: 6px;
+}
+
+/* Portfolio */
+
+.portfolio {
+  position: relative;
+  width: 100%;
+}
+
+.background-bg {
+  position: absolute;
+  width: 100%;
+  height: 500px;
+  background-color: var(--main-color);
+  transform: translateY(-2rem);
+}
+
+.portfolio .title,
+.portfolio .title::before {
+  color: var(--light-less);
+}
+
+.portfolio .title::after {
+  background-color: var(--light-less);
+}
+
+.filter {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.filter .filter-btn {
+  border: none;
+  outline: none;
+  background-color: transparent;
+  margin: 0.4rem 0rem;
+  padding: 0.4rem 2rem;
+  text-transform: uppercase;
+  font-weight: 500;
+  color: var(--light-less);
+  font-size: 1.1rem;
+  cursor: pointer;
+  border-radius: 2rem;
+  transition: 0.3s;
+}
+
+.filter .filter-btn.active {
+  background-color: white;
+  color: var(--main-color);
+}
+
+.overlay.overlay-sm .shape {
+  filter: brightness(0) invert(1);
+  opacity: 0.2;
+  height: 40px;
+}
+
+.overlay.overlay-sm .shape.wave {
+  height: initial;
+  width: 70px;
+}
+
+.portfolio .square {
+  right: 90%;
+  top: 80%;
+}
+
+.portfolio .triangle {
+  top: 10%;
+  left: 60%;
+}
+
+.portfolio .xshape {
+  right: 10%;
+  top: 40%;
+}
+
+.portfolio .half-circle1 {
+  top: 20%;
+  right: 5%;
+}
+
+.portfolio .half-circle2 {
+  top: 50%;
+  left: 10%;
+}
+
+.portfolio .wave {
+  top: 10%;
+  left: 20%;
+}
+
+.portfolio .circle {
+  top: 80%;
+  right: 5%;
+}
+
+.grid {
+  width: 100%;
+  margin: 1rem 0;
+}
+
+.grid-item {
+  width: 33.33%;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery-img {
+  position: relative;
+  width: 100%;
+  border-radius: 8px;
+  height: 200px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.gallery-img img {
+  position: absolute;
+  width: initial;
+  height: 100%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transform-origin: center;
+  transition: 0.3s;
+}
+
+.gallery-img .img-overlay {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  background-color: rgba(130, 90, 250, 0.5);
+  color: var(--light-less);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  padding: 1rem;
+  opacity: 0;
+  transition: 0.3s;
+}
+
+.gallery-img:hover .img-overlay {
+  opacity: 1;
+}
+
+.img-overlay .plus {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  margin: auto 0;
+}
+
+.plus::before,
+.plus::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 4px;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 3px;
+  background-color: var(--light-less);
+}
+
+.plus::after {
+  transform: translateX(-50%) rotate(-90deg);
+}
+
+.img-description {
+  width: 100%;
+}
+
+.img-overlay h3 {
+  font-weight: 600;
+  text-transform: uppercase;
+  font-size: 1.2rem;
+}
+
+.img-overlay h5 {
+  font-weight: 400;
+}
+
+.gallery-img:hover img {
+  transform: translate(-50%, -50%) scale(1.1);
+}
+
+.more-folio {
+  display: flex;
+  justify-content: center;
 }
