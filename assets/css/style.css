@@ -551,3 +551,36 @@ header .points2 {
   display: flex;
   justify-content: center;
 }
+
+/* Technologies */
+
+.technologies .icons {
+  width: 100%;
+}
+
+.technologies .icons .icons-wrap {
+  width: 70%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  flex-wrap: wrap;
+}
+
+.technologies .icons .icon-card {
+  width: 100px;
+  height: 100px;
+  margin: 1rem;
+}
+
+.technologies .icons .icon-card img {
+  height: 100%;
+  width: 100%;
+  transition: 0.3s;
+  cursor: pointer;
+  filter: grayscale(0.9);
+}
+
+.technologies .icons .icon-card img:hover {
+  filter: grayscale(0);
+}
