@@ -455,6 +455,7 @@ header .points2 {
 .grid {
   width: 100%;
   margin: 1rem 0;
+  min-height: 300px;
 }
 
 .grid-item {
@@ -483,6 +484,7 @@ header .points2 {
   transform: translate(-50%, -50%);
   transform-origin: center;
   transition: 0.3s;
+  border-radius: 6px;
 }
 
 .gallery-img .img-overlay {
